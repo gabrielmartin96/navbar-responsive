@@ -1,9 +1,7 @@
-*{
-    margin: 0px;
-    padding: 0px;
+html {
     box-sizing: border-box;
+    font-size: 62.5%; /** 1rem = 10px **/
 }
-
 
 body {
     background: url(img.jpg) no-repeat center center fixed;
@@ -11,9 +9,15 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    width: 100%;
 }
 
-nav{
+/*Util Tools*/
+.no-margin {
+    margin: 0;
+}
+
+.navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -23,47 +27,45 @@ nav{
     box-shadow: 0px 2px 2px 3px rgba(0, 0, 0, 0.562);
 }
 
-.logo {
+.navbar__logo {
     color: white;
-    letter-spacing: 5px;
-    font-size: 22px;
+    letter-spacing: 0.5rem;
+    font-size: 2.2rem;
 }
 
-.nav-links {
+.navbar__links {
     display: flex;
     justify-content: space-around;
     width: 40%;
     list-style: none;
 }
-
-.nav-links a{
+.navbar__links a {
     color: white;
     text-decoration: none;
-    letter-spacing: 3px;
+    letter-spacing: 0.3rem;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 1.5rem;
 }
 
 .burger {
     display: none;
 }
 
-.burger div{
-    width: 25px;
-    height: 3px;
+.burger div {
+    width: 2.5rem;
+    height: 0.3rem;
     background-color: white;
-    margin: 5px;
+    margin: 0.5rem;
 }
 
 @media screen and (max-width: 800px) {
-
     body {
         overflow-x: hidden;
     }
 
-    .nav-links {
+    .navbar__links {
         position: absolute;
-        right: 0px;
+        /*right: 0px;*/
         height: 92vh;
         top: 8vh;
         background-color: #4c495d;
@@ -71,12 +73,12 @@ nav{
         flex-direction: column;
         align-items: center;
         width: 100%;
-        transform: translateX(100%);
         transition: transform 0.3s ease-in;
+        transform: translateX(100%);
         box-shadow: 0px 2px 2px 5px rgba(0, 0, 0, 0.555);
     }
 
-    .nav-links a{
+    .navbar__links a {
         width: 100%;
     }
 
@@ -86,6 +88,6 @@ nav{
     }
 }
 
-.nav-active {
+.navbar-active {
     transform: translateX(0%);
 }
